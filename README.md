@@ -195,7 +195,7 @@ public class ClassMethodCons {
 
 - 여기까지 알았다면 왜 main메소드를 public static void main() 형태로 쓰는지 이해할 수 있을것이다. 우선 이 형태는 일종의 약속이라는것을 알고가면 좋다.
 
-- **public** : 우선 main메소드가 호출되는 영역인 클래스의 외부에서 호출된다. 그렇기 때문에 우선 public선언을 해주는것이 맞다.
+- **public** : 우선 main메소드가 호출되는 영역은 클래스의 외부이다. 그렇기 때문에 우선 public선언을 해주는것이 맞다.
 - **static** : main메소드는 인스턴스가 생성되기 이전에 호출된다. 즉 static선언을 해주어야 한다.
 - void : 반환형
 
