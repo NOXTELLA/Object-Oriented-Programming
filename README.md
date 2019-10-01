@@ -3,6 +3,12 @@
 ***
 ### 자바 이름규칙
 
+### 자바(JAVA)의 패러다임 : Object Oriented Programming
+- Object Oriented Programming(객체지향)의 세가지 특성
+  - 상속
+  - 다향성
+  - 캡슐화
+  
 1 . 클래스 이름규칙
 
   - Camel Case모델을 지킬것 
