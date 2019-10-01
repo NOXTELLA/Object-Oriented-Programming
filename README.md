@@ -1,5 +1,5 @@
 
-# Review Java
+# Java Basic Rules 
 ***
 ### 자바 이름규칙
 
