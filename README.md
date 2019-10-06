@@ -241,6 +241,104 @@ public class StaticInitial {
 }
 ```
 
+### 메소드 오버로딩(Method Overloading)
+
+- 한 클래스 내에서 동일한 이름의 메소드를 둘 이상 정의하는것은 문법상 허용되지 않는다. 하지만 매개변수의 선언을 다르게 하면 메소드 오버로딩(Method Overloading)이라는 것이 허용되며 동일한 메소드를 둘 이상 정의하는것이 허용되게 된다.
+
+- 메소드 오버로딩이 되는 경우는 두가지가 있다
+
+  - 동일한 메소드의 이름, 자료형 + 매개변수 개수가 다른경우
+  - 동일한 메소드의 이름, 자료형, 매개변수 개수, 매개변수의 자료형
+ 
+- 메소드 오버로딩이 허용되지 않는 경우
+
+  - 메소드의 이름은 같으나 선언된 자료형이 다른 경우.
+ 
+- 예시 코드와 위의 경우를 살펴보자.
+
+```java
+class OpTest{
+    public static void CP(int a)
+    {
+        int op = a;
+        System.out.println(op);
+    }
+    public static void CP(int a, int b)
+    {
+        int lp =  a + b;
+        System.out.println(lp);
+    }
+    public static void CP(double a)
+    {
+        double ip = a;
+        System.out.println(ip);
+    }
+    public static int CP(int a) // 컴파일 에러
+    {
+        return a;
+    }
+}
+
+public class MethodOveerloading {
+    public static void main(String[] args)
+    {
+        OpTest t = new OpTest();
+        t.CP(30);
+        t.CP(30,40);
+        t.CP(2.10);
+    }
+}
+/*결과
+30
+70
+2.10*/
+```
+- 생성자(Constructor) 또한 메소드 오버로딩의 대상이 될 수 있다.
+
+```java
+class Uo{
+    private int t = 0;
+    private int e = 0;
+    private double q = 0;
+    Uo(int a, int b)
+    {
+        t = a;
+        e = b;
+    }
+    Uo(int a, double b)
+    {
+        t = a;
+        q = b;
+    }
+    void test()
+    {
+        System.out.println(t);
+        System.out.println(e);
+        System.out.println(q);
+    }
+}
+public class MethodOverloading2 {
+    public static void main(String[] args)
+    {
+        Uo qw = new Uo(10, 20);
+        Uo er = new Uo(40,4.5);
+        qw.test();
+        er.test();
+    }
+}
+/*
+10
+20
+0.0
+
+40
+0
+4.5
+*/
+```
+- 위의 예시코드를 보면 Uo 생성자 2개가 존재한다. 하는 int, int를 받는것이고, 하나는 int, double을 받는것이다.main메소드를 보면 알 수 있듯이, 두개의 형태의 생성자를 선언할 수 있다.(qw, er)
+
+
 ### String 클래스
 
 - 문자열을 선언할떄는 String클래스를 이용해서 선언한다. 이부분은 기본적인 선언이기에 기초지식은 생략하겠다.
