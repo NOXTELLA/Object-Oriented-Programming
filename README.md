@@ -240,3 +240,72 @@ public class StaticInitial {
     }
 }
 ```
+
+### String 클래스
+
+- 문자열을 선언할떄는 String클래스를 이용해서 선언한다. 이부분은 기본적인 선언이기에 기초지식은 생략하겠다.
+- 우선 이 코드를 한번 살펴보자.
+
+```java
+public class StringClass {
+    public static void main(String[] args)
+    {
+        String str3 = "Hello";
+        String str4 = "Hello";
+
+        String str5 = new String("World");
+        String str6 = new String("World");
+        /*
+            참조변수를 대상으로 == 연산을 할 경우에는 참조변수의 참조값에대한 비교연산을 한다.
+         */
+        if(str3 == str4)
+        {
+            System.out.println("str3와 str4는 동일한 인스턴스 참조한다");
+        }
+        else
+        {
+            System.out.println("str3와 str4는 다른 인스턴스 참조한다");
+        }
+
+        if(str5 == str6)
+        {
+            System.out.println("str5와 str6는 동일한 인스턴스 참조");
+        }
+        else
+        {
+            System.out.println("str5와 str6는 다른 인스턴스 참조");
+        }
+    }
+}
+```
+
+-이 코드의 결과를 한번 예상해보자. 문자열을 비교할때는 .equals()를 쓰는 거라고 알고있는 사람들은 str3==str4가 약간 의아하게 보일수도 있다. 우선 이 코드의 결과는 다음과 같다.
+
+~~~
+ str3와 str4는 동일한 인스턴스 참조한다
+ str5와 str6는 다른 인스턴스 참조
+~~~
+
+- 여기서 말하는 str3 == str4의 문자열 값에 대한것을 말하는것이 아니다. 여기서 말하는것은 String 인스턴스가 참조하는 참조값에 대한것을 이야기 하는 것이다.
+
+- 그렇다면 str3 str4비교와 str5 str6의 비교에는 어떠한 차이가 있는것일까? 우선적으로 바로 보이는 차이점부터 보면 str3 str4는 String 타입을 바로 대괄호로 선언한 것이고, str5,str6는 String 인스턴스를 각각 만들어 준것이다.
+
+- 지금 말한 그 차이점이 결과값에 차이를 보였다고 할 수있다. 그 이유는 다음과 같다.
+
+> 자바의 String인스턴스는 immutable한 인스턴스이다.
+
+- 여기서 immutable이란 **변경이 불가능하다** 라는 뜻을 지니고 있는 단어이다.그리고 String인스턴스가 기본적으로 변경할 수 없는것은 인스턴스가 갖는 문자열의 내용이다. 즉 여기서 하는 말은 즉슨
+
+```java
+String str3 = "Hello";
+String str4 = "Hello";
+```
+
+- 위의 코드는 
+
+```java
+String str3 = "Hello";
+String str4 = str3;
+```
+
+- 와 같은 의미를 지니게 되는것이다. 이를 통해서 알 수 있는것은 문자열 내용이 같은경우에는 하나의 인스턴스를 생성해서 이를 공유하는 방식으로 처리한다는것을 알 수 있다.
