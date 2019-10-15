@@ -5,9 +5,9 @@
 
 ### 자바(JAVA)의 패러다임 : Object Oriented Programming
 - Object Oriented Programming(객체지향)의 세가지 특성
-  - 상속(Inheritence)
+  - 상속(Inheritence) : class, 접근수준지시자
   - 다형성(Polymorphism)
-  - 캡슐화(Encapsulation)
+  - 캡슐화(Encapsulation) : 오버로딩, 오버라이딩
   
 ### 자바에서의 이름규칙(Naming rules)
 
